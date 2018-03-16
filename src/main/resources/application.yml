@@ -18,3 +18,7 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
+
+appinfo:
+  appId: wx4c295e89c72f4c3d
+  appSecret: 1fadf08903049580f443f6c4edd9ee5b

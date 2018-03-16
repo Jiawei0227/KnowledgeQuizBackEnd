@@ -1,7 +1,10 @@
 package nju.wjw.entity;
 
+import nju.wjw.vo.QuestionVO;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Arrays;
 
 /**
  * Created by Jerry Wang on 12/03/2018.
@@ -31,6 +34,16 @@ public class Question implements Serializable{
     private String difficulty;
 
     private String type;
+
+    public QuestionVO toQuestionVO(){
+        QuestionVO questionVO = new QuestionVO();
+        questionVO.setDifficulty(this.getDifficulty());
+        questionVO.setQuestionDescription(this.getDescription());
+        questionVO.setAnswer(Arrays.asList(this.getAnswer().split(":::")));
+        questionVO.setChoices(Arrays.asList(this.getChoices().split(":::")));
+        questionVO.setType(this.getType());
+        return questionVO;
+    }
 
     public Long getId() {
         return id;
