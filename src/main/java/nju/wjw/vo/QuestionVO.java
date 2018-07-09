@@ -6,6 +6,9 @@ import java.util.List;
  * Created by Jerry Wang on 12/03/2018.
  */
 public class QuestionVO {
+
+    private String questionId;
+
     private String questionDescription;
 
     private String difficulty;
@@ -15,6 +18,14 @@ public class QuestionVO {
     private List<String> choices;
 
     private List<String> answer;
+
+    public String getQuestionId() {
+        return questionId;
+    }
+
+    public void setQuestionId(String questionId) {
+        this.questionId = questionId;
+    }
 
     public String getChoicesString(){
         return String.join(":::",choices);

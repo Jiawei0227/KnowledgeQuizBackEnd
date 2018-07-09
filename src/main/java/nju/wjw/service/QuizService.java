@@ -1,9 +1,7 @@
 package nju.wjw.service;
 
 import nju.wjw.util.ResultMsg;
-import nju.wjw.vo.QuestionVO;
-import nju.wjw.vo.RankListVO;
-import nju.wjw.vo.ScoreVO;
+import nju.wjw.vo.*;
 
 import java.util.List;
 
@@ -12,12 +10,18 @@ import java.util.List;
  */
 public interface QuizService {
 
-    public String getOpenId(String code);
+    public LoginStatusVO getOpenId(String code);
 
     public ResultMsg recordScore(ScoreVO scoreVO);
 
+    public ResultMsg recordQuizContent(ScoreContentVO scoreContentVO);
+
     public RankListVO getRankList(String openId);
 
+    public RankListVO getWeekList(String openId);
+
     public List<QuestionVO> generateQuiz(String openId);
+
+    public SelfRankingVO getRankingInfo(String openId);
 
 }

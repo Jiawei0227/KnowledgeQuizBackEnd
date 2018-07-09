@@ -7,10 +7,20 @@ public class LoginStatusVO {
 
     private String openid;
 
+    private String unionid;
+
     private String session_key;
 
     public String getOpenid() {
         return openid;
+    }
+
+    public String getUnionid() {
+        return unionid;
+    }
+
+    public void setUnionid(String unionid) {
+        this.unionid = unionid;
     }
 
     public void setOpenid(String openid) {

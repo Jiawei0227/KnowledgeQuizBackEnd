@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="KnowledgeQuiz:war">
     <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="KnowledgeQuiz.war">
+    <root id="archive" name="KnowledgeBase-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="KnowledgeQuiz:war exploded" />
     </root>
   </artifact>

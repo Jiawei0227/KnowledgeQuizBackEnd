@@ -9,6 +9,16 @@ public class RankListVO {
 
     private ScoreVO self;
 
+    private boolean isReward;
+
+    public boolean isReward() {
+        return isReward;
+    }
+
+    public void setReward(boolean reward) {
+        isReward = reward;
+    }
+
     private List<ScoreVO> scoreVOS;
 
     public ScoreVO getSelf() {

@@ -3,6 +3,7 @@ package nju.wjw.controller;
 import nju.wjw.service.QuizService;
 import nju.wjw.util.ResultMsg;
 import nju.wjw.util.StatusUtils;
+import nju.wjw.vo.ScoreContentVO;
 import nju.wjw.vo.ScoreVO;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -40,12 +41,27 @@ public class QuizController {
         return quizService.recordScore(scoreVO);
     }
 
+    @RequestMapping(value = "/submitScoreDetail",method = RequestMethod.POST)
+    @ResponseBody
+    @CrossOrigin(origins = "*", maxAge = 3600)
+    public ResultMsg submitScore(@RequestBody ScoreContentVO scoreVO){
+        return quizService.recordQuizContent(scoreVO);
+    }
+
     @RequestMapping(value = "/getAllRankList",method = RequestMethod.GET)
     @ResponseBody
     @CrossOrigin(origins = "*", maxAge = 3600)
-    public ResultMsg getAllRankList(String openId){
+    public ResultMsg getAllRankList(@RequestParam String openId){
 
         return new ResultMsg(StatusUtils.SUCCESS,quizService.getRankList(openId));
+    }
+
+    @RequestMapping(value = "/getWeekRankList",method = RequestMethod.GET)
+    @ResponseBody
+    @CrossOrigin(origins = "*", maxAge = 3600)
+    public ResultMsg getWeekRankList(@RequestParam String openId){
+
+        return new ResultMsg(StatusUtils.SUCCESS,quizService.getWeekList(openId));
     }
 
     @RequestMapping(value = "/generateQuiz",method = RequestMethod.GET)
@@ -54,6 +70,13 @@ public class QuizController {
     public ResultMsg generateQuiz(@RequestParam String openId){
 
         return new ResultMsg(StatusUtils.SUCCESS, quizService.generateQuiz(openId));
+    }
+
+    @RequestMapping(value = "/getRankStar",method = RequestMethod.GET)
+    @ResponseBody
+    @CrossOrigin(origins = "*", maxAge = 3600)
+    public ResultMsg getRankStar(@RequestParam String openId){
+        return new ResultMsg(StatusUtils.SUCCESS, quizService.getRankingInfo(openId));
     }
 
 }

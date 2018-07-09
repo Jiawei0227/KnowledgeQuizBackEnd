@@ -42,6 +42,7 @@ public class Question implements Serializable{
         questionVO.setAnswer(Arrays.asList(this.getAnswer().split(":::")));
         questionVO.setChoices(Arrays.asList(this.getChoices().split(":::")));
         questionVO.setType(this.getType());
+        questionVO.setQuestionId(this.getId().toString());
         return questionVO;
     }
 

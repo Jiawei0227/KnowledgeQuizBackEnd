@@ -7,7 +7,9 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/KnowledgeQuiz?characterEncoding=UTF-8
     username: root
-    password: webgoat...
+    password: Knowledge123!
+    #password: Pabao.z5Yv
+    #password: webgoat...
     driver-class-name: com.mysql.jdbc.Driver
   jpa:
     database: MYSQL
@@ -20,5 +22,5 @@ spring:
         dialect: org.hibernate.dialect.MySQL5Dialect
 
 appinfo:
-  appId: wx4c295e89c72f4c3d
-  appSecret: 1fadf08903049580f443f6c4edd9ee5b
+  appid: wxd85b8532ae26b621
+  appsecret: 29d0dc633c4601b90f8f045f0f4fcef8
